@@ -2,5 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui']
-})
+  extends: ['@nuxt/ui-pro'],
+  modules: ['@nuxt/ui'],
+  future: {
+    compatibilityVersion: 4,
+  },
+});

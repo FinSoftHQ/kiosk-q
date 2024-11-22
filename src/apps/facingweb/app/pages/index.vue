@@ -1,5 +1,7 @@
 <template>
   <UContainer>
-    <h1>Home Page</h1>
+    <div class="flex items-center justify-center h-screen">
+      <img src="/org-logo.png" alt="Fin Soft powered KIOSK" class="w-32 h-32" />
+    </div>
   </UContainer>
 </template>

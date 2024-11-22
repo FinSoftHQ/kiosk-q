@@ -1,8 +1,8 @@
 <template>
   <UHeader :links="links">
     <template #logo>
-      Nuxt UI Pro
-      <UBadge label="SaaS"
+      Fin Soft powered KIOSK
+      <UBadge label="Queue"
         variant="subtle"
         class="mb-0.5" />
     </template>

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-const kiosk = (<any>window).kiosk ? (<any>window).kiosk : {
+const kiosk = (<any>window)?.kiosk ? (<any>window).kiosk : {
   closeapp: () => {
     console.log('Dummy close app');
   }

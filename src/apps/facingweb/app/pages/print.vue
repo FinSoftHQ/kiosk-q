@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Printing ...</h1>
-    <UButton @click="print">Print</UButton>
+    <UButton class="mr-4 mb-4" @click="print">Print</UButton>
+    <UButton @click="closeApp">Close</UButton>
   </div>
 </template>
 
@@ -10,5 +11,9 @@ const kiosk = useKiosk();
 function print() {
   console.log('Printing ...');
   kiosk.printslip();
+}
+
+function closeApp() {
+  kiosk.closeapp();
 }
 </script>

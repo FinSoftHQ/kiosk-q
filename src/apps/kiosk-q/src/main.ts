@@ -17,6 +17,16 @@ const createWindow = () => {
     frame: false,
   });
 
+  ipcMain.handle('print-slip', (_: any, data: string) => {
+    console.log('Printing slip:', data);
+    mainWindow?.webContents.print({
+      silent: true,
+      margins: { marginType: 'none' },
+      pageSize: { width: 1050, height: 1480 }, // Dimensions for A6 size in microns (1 mm = 1000 microns) })
+    });
+    return 'OK';
+  });
+
   const KIOSK_SERVER_URL = process.env.KIOSK_SERVER_URL;
 
   // and load the index.html of the app.
@@ -43,10 +53,6 @@ app.whenReady().then(() => {
   ipcMain.handle('close-app', (_event: any, reason: string) => {
     console.log('Closing app:', reason);
     app.quit();
-  });
-  ipcMain.handle('print-slip', (_: any, data: string) => {
-    console.log('Printing slip:', data);
-    return 'OK';
   });
   createWindow();
 });

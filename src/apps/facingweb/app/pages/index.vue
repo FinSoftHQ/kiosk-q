@@ -5,6 +5,7 @@
         <img src="/org-logo.png"
           alt="Fin Soft powered KIOSK"
           class="w-32 h-32" />
+        <NuxtLink to="/print">Print</NuxtLink>
         <UButton @click="closeApp">Close</UButton>
       </div>
     </div>
@@ -12,11 +13,8 @@
 </template>
 
 <script setup lang="ts">
-const kiosk = (<any>window)?.kiosk ? (<any>window).kiosk : {
-  closeapp: () => {
-    console.log('Dummy close app');
-  }
-};
+const kiosk = useKiosk();
+
 function closeApp() {
   kiosk.closeapp();
 }

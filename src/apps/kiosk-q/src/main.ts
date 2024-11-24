@@ -14,6 +14,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    frame: false,
   });
 
   const KIOSK_SERVER_URL = process.env.KIOSK_SERVER_URL;
@@ -31,6 +32,8 @@ const createWindow = () => {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
+
+  mainWindow.setFullScreen(true);
 };
 
 // This method will be called when Electron has finished

@@ -5,14 +5,18 @@
         <img src="/org-logo.png"
           alt="Fin Soft powered KIOSK"
           class="w-32 h-32" />
-        <UButton>Close</UButton>
+        <UButton @click="closeApp">Close</UButton>
       </div>
     </div>
   </UContainer>
 </template>
 
 <script setup lang="ts">
-const kiosk = (<any>window).kiosk;
+const kiosk = (<any>window).kiosk ? (<any>window).kiosk : {
+  closeapp: () => {
+    console.log('Dummy close app');
+  }
+};
 function closeApp() {
   kiosk.closeapp();
 }

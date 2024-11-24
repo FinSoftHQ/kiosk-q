@@ -81,6 +81,9 @@ importers:
       '@electron-forge/plugin-vite':
         specifier: ^7.5.0
         version: 7.5.0
+      '@electron-forge/shared-types':
+        specifier: ^7.5.0
+        version: 7.5.0
       '@electron/fuses':
         specifier: ^1.8.0
         version: 1.8.0
